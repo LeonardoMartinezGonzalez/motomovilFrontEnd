@@ -25,7 +25,7 @@ const CrearCuenta =  () => {
    const [nombre, setNombre] = useState('');
    const [apellidos, setApellidos] = useState('');
    const [numeroTelefono, setnumeroTelefono] = useState('');
-   const [email, setemail] = useState('');
+   const [correo, setcorreo] = useState('');
    const [password, setpassword] = useState('');
 
     //React Navigation
@@ -37,7 +37,7 @@ const CrearCuenta =  () => {
     // Cuando el usuario presiona el boton de crear Usuario
     const handleSubmit = async () =>{
        //Validar formulario
-      if (nombre === ''  || apellidos === '' || numeroTelefono === '' || email === '' || password === '') {
+   if (nombre === ''  || apellidos === '' || numeroTelefono === '' || correo === '' || password === '') {
          //Error
          
          setVisible(true);
@@ -63,14 +63,14 @@ const CrearCuenta =  () => {
                    nombre,
                    apellidos,
                    numeroTelefono,
-                   email,
+                   correo,
                    password
                 }
              }
           });
 
           setVisible(true);
-          setMensaje('Usuario registrado');
+          setMensaje(data.crearUsuario);
 
           navigation.navigate('Login');
 
@@ -132,7 +132,7 @@ const CrearCuenta =  () => {
                            label="Correo electrónico"
                            labelStyle = {{fontSize:10, color:'#333'}}
                            /* style={styles.inputIcono} */
-                           onChangeText = { texto => setemail(texto)}
+                           onChangeText = { texto => setcorreo(texto)}
                           /*  leftIcon={
                               <Icon
                               name='user'

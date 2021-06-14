@@ -46,7 +46,7 @@ const globalStyles = StyleSheet.create({
     },
     modal:{
         flex: 0.5,
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         backgroundColor: '#fff',
         borderRadius: 4,
         padding: 20,
