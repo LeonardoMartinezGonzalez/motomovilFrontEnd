@@ -11,6 +11,7 @@ const Stack = createStackNavigator();
 import Login from './Views/Login';
 import CrearCuenta from './Views/CrearCuenta';
 import CrearServicio  from './Views/CrearServicio';
+import ServiciosRealizados  from './Views/ServiciosRealizados';
 
 // prettier-ignore
 const App = () =>  {
@@ -33,7 +34,7 @@ const App = () =>  {
             component = {CrearCuenta}
             options = {{
               title: "", //Registro de Usuarios
-              headerShown: true
+              headerShown: false
             }}
           />
 
@@ -41,14 +42,24 @@ const App = () =>  {
             name="CrearServicio"
             component = {CrearServicio}
             options = {{
-              title: "Solicitar Servicio", //Registro de Usuarios
+              title: "MotoMovil", //Registro de Usuarios
               headerStyle: {
-                backgroundColor: '#28303B'
+                backgroundColor: '#E4941B'
               },
+              headerShown: true,
               headerTintColor: '#fff',
               headerTitleStyle:{
                 fontWeight: 'bold'
               }
+            }}
+          />
+
+          <Stack.Screen
+            name="ServiciosRealizados"
+            component = {ServiciosRealizados}
+            options = {{
+              title: "Servicios Solicitados", //Servicios solicitados por usuarios
+              headerShown: true
             }}
           />
         

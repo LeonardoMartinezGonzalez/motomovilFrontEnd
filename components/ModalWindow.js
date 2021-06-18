@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet,  Modal } from 'react-native';
-import { Button } from 'react-native-elements';
-import globalStyles from '../Views/styles/global';
+//import { Button } from 'react-native-elements';
+//import globalStyles from '../Views/styles/global';
 
 // prettier-ignore
 export default ({ children, visibility }) => { 
-    const [bandera, setVisibility] = useState(visibility);
+    //const [visibility, setVisibility] = useState(visibility);
     return (
       <Modal
-        animationType = {"slide"}
+        animationType = "slide"
         transparent={true}
-        visible= {bandera}
+        visible= {visibility}
         
       >
         <View style = { styles.center }>
@@ -18,18 +18,18 @@ export default ({ children, visibility }) => {
               
               {children}
 
-              <Button
+              {/* <Button
                   title="Cerrar"
                   containerStyle={{ marginVertical: 10, alignItems:'center'}} 
                   underlayColor="transparent"
                   buttonStyle = { globalStyles.boton}
                   onPress={ () => setVisibility(false)}
 
-              />
+              /> */}
             </View>
         </View>
       </Modal>     
-  );
+  )
 }
 
 const styles = StyleSheet.create({
@@ -39,13 +39,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   modalView:{
-    backgroundColor: '#fff',
-    borderRadius: 4,
+    opacity: 0.8,
+    borderRadius: 5,
     padding: 20,
     shadowColor: '#000',
     shadowOffset: { 
       width: 0,
       height: 3,
-    }
+    },
+    backgroundColor: '#9E9E9E'
   },
 });

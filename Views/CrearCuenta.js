@@ -49,7 +49,6 @@ const CrearCuenta =  () => {
        //Password de almenos 6 caracteres
       if (password.length < 6){
          setVisible(true);
-        // setMensaje('Debes llenar todos los campos');
          setMensaje('La clave debe ser al menos de 6 caracteres');
          return;
       }
@@ -85,12 +84,19 @@ const CrearCuenta =  () => {
         <View style = {[globalStyles.contenedor, { backgroundColor: '#fff'}]}>
             <View style= { globalStyles.contenido}>
                 <ScrollView>
+                  <View style = { globalStyles.fondoEncabezado} >
+                        <Text style= {globalStyles.titulo1} >Moto
+                            <Text style= {globalStyles.titulo2} >Movil </Text>
+                        </Text>
+                  </View>
+                  
                   <Text style = { globalStyles.titulo } >Registro de Usuarios</Text>
                      <ThemeProvider>
                         <Input
                            placeholder="Nombre(s)"
                            label="Nombre(s)"
                            labelStyle = {{fontSize:10, color:'#333'}}
+                           inputStyle ={{height: 20}}
                            underlineColorAndroid="#fff"
                            onChangeText = { texto => setNombre(texto)}
                         />
@@ -102,6 +108,7 @@ const CrearCuenta =  () => {
                            placeholder="Apellidos"
                            label="Apellidos"
                            labelStyle = {{fontSize:10, color:'#333'}}
+                           inputStyle ={{height: 20}}
                            onChangeText = { texto => setApellidos(texto)}
                         />
                      </ThemeProvider>
@@ -112,6 +119,7 @@ const CrearCuenta =  () => {
                            placeholder="Número de teléfono celular"
                            label="Número de teléfono celular"
                            labelStyle = {{fontSize:10, color:'#333'}}
+                           inputStyle ={{height: 20}}
                            onChangeText = { texto => setnumeroTelefono(texto)}
                            /* style={styles.inputIcono} */
                            
@@ -131,6 +139,7 @@ const CrearCuenta =  () => {
                            placeholder="Correo electrónico"
                            label="Correo electrónico"
                            labelStyle = {{fontSize:10, color:'#333'}}
+                           inputStyle ={{height: 20}}
                            /* style={styles.inputIcono} */
                            onChangeText = { texto => setcorreo(texto)}
                           /*  leftIcon={
@@ -149,6 +158,7 @@ const CrearCuenta =  () => {
                            placeholder="Clave"
                            label="Clave"
                            labelStyle = {{fontSize:10, color:'#333'}}
+                           inputStyle ={{height: 20}}
                            /* style={styles.inputIcono} */
                            secureTextEntry={true}
                            onChangeText = { texto => setpassword(texto)}
@@ -164,10 +174,10 @@ const CrearCuenta =  () => {
                 
                     <ThemeProvider>
                         <Button
-                            title="Iniciar Sesión"
-                            containerStyle={{ marginVertical: 10, alignItems:'center'}} 
+                            title="Crear Cuenta"
+                            containerStyle={{ alignItems:'center'}} 
                             underlayColor="transparent"
-                            buttonStyle = { globalStyles.boton}
+                            buttonStyle = { [globalStyles.boton, {marginTop:0}]}
                             onPress={ () => handleSubmit()}
 
                         />
@@ -186,7 +196,9 @@ const CrearCuenta =  () => {
                            containerStyle={{ marginVertical: 10}}
                         />
                      </Overlay>
-
+                     <View style = {{marginTop:10, backgroundColor:'9E9E9E', height:50} } >
+                       
+                     </View>
                 </ScrollView>
             </View>
         </View>

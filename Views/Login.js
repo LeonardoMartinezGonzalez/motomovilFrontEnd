@@ -77,21 +77,26 @@ const Login = () => {
             setVisible(true);
             setMensaje(error.message.replace('GraphQL eror: ',''));
         }
-
     }
 
     return (
 
         <View style = {[globalStyles.contenedor, { backgroundColor: '#fff'}]}>
             <View style= { globalStyles.contenido}>
+                
                 <ScrollView>
-                    <Text style= {globalStyles.titulo} >MotoMovil</Text>
-                    
+                    <View style = { globalStyles.fondoEncabezado} >
+                        <Text style= {globalStyles.titulo1} >Moto
+                            <Text style= {globalStyles.titulo2} >Movil </Text>
+                        </Text>
+                    </View>
+
+                    <View>
                     <ThemeProvider>
                         <Input
                         placeholder="Correo electrónico"
                         label="Correo electrónico"
-                        labelStyle = {{fontSize:10, color:'#333'}}
+                        labelStyle = {{fontSize:10, color:'#333', marginTop:40}}
                         onChangeText = { (text) => setcorreo(text)}
                         /* style={styles.inputIcono} */
                         /* leftIcon={
@@ -139,7 +144,7 @@ const Login = () => {
                         onPress = { () => navigation.navigate("CrearCuenta") }
                     >Registrarse</Text>
 
-<Overlay 
+                    <Overlay 
                         isVisible={visible} 
                         onBackdropPress={toggleOverlay}
                         overlayStyle = { globalStyles.modal}
@@ -152,7 +157,10 @@ const Login = () => {
                            containerStyle={{ marginVertical: 10}}
                         />
                      </Overlay>
-
+                     </View>
+                     <View style = { globalStyles.fondoPie} >
+                        
+                    </View>
                 </ScrollView>
             </View>
         </View>

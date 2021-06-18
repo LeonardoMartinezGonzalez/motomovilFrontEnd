@@ -6,10 +6,10 @@ import { setContext } from 'apollo-link-context';
 import { Platform } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// prettier-ignore
+
 const httpLink = createHttpLink({
   //reemplazar por la ip de la maquina (comando ipconfig en powerShell, es la ip v4)
-  uri : 'http://192.168.2.148:4000'
+  uri : 'http://192.168.1.67:4000'
   // uri: Platform.OS === 'ios' ? 'http://localhost:4000/' : 'http://10.0.2.2:4000'
 })
 
@@ -24,8 +24,6 @@ const authLink = setContext( async ( _, { headers }) => {
     }
   }
 })
-
-
 
 const client = new ApolloClient({
     cache: new InMemoryCache(),
